@@ -11,7 +11,7 @@
 //! precompiles defined by [`odyssey_precompile`].
 
 use alloy_primitives::{Address, Bytes, TxKind, U256};
-use odyssey_precompile::secp256r1;
+use odyssey_precompile::{secp256r1, regex};
 use reth_chainspec::{ChainSpec, EthereumHardfork, Head};
 use reth_node_api::{ConfigureEvm, ConfigureEvmEnv, NextBlockEnvAttributes};
 use reth_optimism_chainspec::OpChainSpec;
@@ -64,6 +64,7 @@ impl OdysseyEvmConfig {
                 ContextPrecompiles::new(PrecompileSpecId::from_spec_id(spec_id));
 
             loaded_precompiles.extend(secp256r1::precompiles());
+            loaded_precompiles.extend(regex::precompiles());
 
             loaded_precompiles
         });

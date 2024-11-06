@@ -10,5 +10,6 @@
 
 /// The implementation of [EIP-7212](https://eips.ethereum.org/EIPS/eip-7212): Precompile for secp256r1 Curve Support.
 pub mod secp256r1;
+pub mod regex;
 
 mod addresses;
