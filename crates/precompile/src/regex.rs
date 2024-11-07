@@ -1,4 +1,4 @@
-//! # TODO: Example Regex Precompile
+//! # TODO: Example Regex Precompile https://github.com/ethereum/EIPs/issues/125
 //!
 //! This module implements a regex precompile for educational purposes.
 //! It allows matching a regex pattern against a string and returns the matched substring.
@@ -11,7 +11,7 @@ use reth_revm::{
     primitives::{PrecompileError, PrecompileErrors, PrecompileOutput, PrecompileResult},
 };
 
-// TODO: decide on all constants
+// TODO UNSAFE: Regex crate is max O(m * n) complexity, need to update gas logic to prevent DoS
 /// Base gas fee for the regex match operation.
 const REGEXMATCH_BASE: u64 = 3_000;
 /// Gas cost per byte of the pattern and string.
